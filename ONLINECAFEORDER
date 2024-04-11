@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .price {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Cafe Order</h1>
+
+    <div class="item">
+        <h2>Coffee</h2>
+        <img src="coffee.jpg" alt="Coffee">
+        <p>Price: $3.50</p>
+        <label for="coffeeQuantity">Quantity:</label>
+        <input type="number" id="coffeeQuantity" name="coffeeQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Tea</h2>
+        <img src="tea.jpg" alt="Tea">
+        <p>Price: $2.50</p>
+        <label for="teaQuantity">Quantity:</label>
+        <input type="number" id="teaQuantity" name="teaQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Sandwich</h2>
+        <img src="sandwich.jpg" alt="Sandwich">
+        <p>Price: $5.00</p>
+        <label for="sandwichQuantity">Quantity:</label>
+        <input type="number" id="sandwichQuantity" name="sandwichQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Cake</h2>
+        <img src="cake.jpg" alt="Cake">
+        <p>Price: $4.50</p>
+        <label for="cakeQuantity">Quantity:</label>
+        <input type="number" id="cakeQuantity" name="cakeQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Smoothie</h2>
+        <img src="smoothie.jpg" alt="Smoothie">
+        <p>Price: $5.50</p>
+        <label for="smoothieQuantity">Quantity:</label>
+        <input type="number" id="smoothieQuantity" name="smoothieQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Salad</h2>
+        <img src="salad.jpg" alt="Salad">
+        <p>Price: $6.00</p>
+        <label for="saladQuantity">Quantity:</label>
+        <input type="number" id="saladQuantity" name="saladQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Pastry</h2>
+        <img src="pastry.jpg" alt="Pastry">
+        <p>Price: $3.00</p>
+        <label for="pastryQuantity">Quantity:</label>
+        <input type="number" id="pastryQuantity" name="pastryQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Burger</h2>
+        <img src="burger.jpg" alt="Burger">
+        <p>Price: $7.00</p>
+        <label for="burgerQuantity">Quantity:</label>
+        <input type="number" id="burgerQuantity" name="burgerQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Juice</h2>
+        <img src="juice.jpg" alt="Juice">
+        <p>Price: $3.00</p>
+        <label for="juiceQuantity">Quantity:</label>
+        <input type="number" id="juiceQuantity" name="juiceQuantity" value="0">
+    </div>
+
+    <div class="item">
+        <h2>Pizza</h2>
+        <img src="pizza.jpg" alt="Pizza">
+        <p>Price: $8.00</p>
+        <label for="pizzaQuantity">Quantity:</label>
+        <input type="number" id="pizzaQuantity" name="pizzaQuantity" value="0">
+    </div>
+
+    <div>
+        <button onclick="calculateTotal()">Calculate Total</button>
+    </div>
+
+    <div id="totalAmount"></div>
+
+    <script>
+        function calculateTotal() {
+            var coffeePrice = 3.50;
+            var teaPrice = 2.50;
+            var sandwichPrice = 5.00;
+            var cakePrice = 4.50;
+            var smoothiePrice = 5.50;
+            var saladPrice = 6.00;
+            var pastryPrice = 3.00;
+            var burgerPrice = 7.00;
+            var juicePrice = 3.00;
+            var pizzaPrice = 8.00;
+
+            var coffeeQuantity = parseInt(document.getElementById('coffeeQuantity').value);
+            var teaQuantity = parseInt(document.getElementById('teaQuantity').value);
+            var sandwichQuantity = parseInt(document.getElementById('sandwichQuantity').value);
+            var cakeQuantity = parseInt(document.getElementById('cakeQuantity').value);
+            var smoothieQuantity = parseInt(document.getElementById('smoothieQuantity').value);
+            var saladQuantity = parseInt(document.getElementById('saladQuantity').value);
+            var pastryQuantity = parseInt(document.getElementById('pastryQuantity').value);
+            var burgerQuantity = parseInt(document.getElementById('burgerQuantity').value);
+            var juiceQuantity = parseInt(document.getElementById('juiceQuantity').value);
+            var pizzaQuantity = parseInt(document.getElementById('pizzaQuantity').value);
+
+            var totalAmount = (coffeePrice * coffeeQuantity) + (teaPrice * teaQuantity) + (sandwichPrice * sandwichQuantity) + (cakePrice * cakeQuantity) +
+            (smoothiePrice * smoothieQuantity) + (saladPrice * saladQuantity) + (pastryPrice * pastryQuantity) + (burgerPrice * burgerQuantity) +
+            (juicePrice * juiceQuantity) + (pizzaPrice * pizzaQuantity);
+
+            document.getElementById('totalAmount').innerHTML = 'Total Amount: $' + totalAmount.toFixed(2);
+        }
+    </script>
+</body>
+</html>
